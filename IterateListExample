@@ -1,0 +1,57 @@
+public class IterateListExample1  
+{  
+		public static void main(String args[])   
+		{  
+			//defining a List  
+			List<String> city = Arrays.asList("Boston", "San Diego", "Las Vegas", "Houston", "Miami", "Austin");  
+			
+			//iterate list using for basic loop  
+			System.out.println("************Basic Loop*************** "); 
+			for (int i = 0; i < city.size(); i++)   
+			{  
+				
+				//prints the elements of the List  
+				System.out.println(city.get(i));  
+			} 
+			
+			//iteration over List using enhanced for loop 
+			System.out.println("***************Enhanced Loop************* "); 
+			for (String cities : city)   
+			{  
+				
+				//prints the elements of the List  
+				System.out.println(cities);   
+			} 
+			
+			//Java Iterator: iterate List using enhances for loop  
+			Iterator<String> cityIterator = city.iterator();  
+			//iterator over List using while loop  
+			System.out.println("***************Java Itervator************* "); 
+			while(cityIterator.hasNext())   
+				{  
+				System.out.println(cityIterator.next());   
+			}  
+			
+			//iterate List using the ListIterator  
+			ListIterator<String> listIterator = city.listIterator(); 
+			System.out.println("***************Java ListItervator************* ");
+			while(listIterator.hasNext())   
+			{  
+				//prints the elements of the List  
+				System.out.println(listIterator.next());  
+			} 
+			
+			//iterate List using forEach 
+			System.out.println("**************Java forEach Method************* ");
+			city.forEach(c -> System.out.println(c));  
+			System.out.println("**************Java forEach lamda expression************* ");
+			city.forEach(System.out::println);  
+			//city.forEach(null);
+			
+			
+			System.out.println("**************Java Stream.forEach()************* ");
+			//iterate List using forEach loop  
+			city.stream().forEach((c) -> System.out.println(c));  			
+			  
+		}  
+}  
